@@ -30,6 +30,11 @@
           <a href="/">{.if logoImageUrl}<img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />{.or}{siteTitle}{.end}</a>
         </h1>
       </div>
+      <div id="upper-logo">
+        <h1 class="logo" data-content-field="site-title">
+          <a href="/">{.if logoImageUrl}<img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" />{.or}{siteTitle}{.end}</a>
+        </h1>
+      </div>
       <script type="module">
       if (parseInt(Y.one('body').getComputedStyle('width'),10) <= 640) {
         Y.use('squarespace-ui-base', function(Y) {
