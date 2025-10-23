@@ -12,16 +12,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- Tus CSS (coinciden con template.conf) -->
-  <link rel="stylesheet" href="/assets/css/config.css" />
-  <link rel="stylesheet" href="/assets/css/tokens.css" />
-  <link rel="stylesheet" href="/assets/css/buttons.css" />
-  <link rel="stylesheet" href="/assets/css/home.css" />
-  <link rel="stylesheet" href="/assets/css/font.css" />
+  <link rel="stylesheet" href="/css/config.css" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/buttons.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/font.css" />
+
 </head>
 <body>
   <!-- Si usas parciales, puedes tener {header} y {footer}; si no, escribe tu HTML -->
   <div class="harca">
-    {content}   <!-- 👈 aquí se inyecta el contenido de la página -->
+    {content}   
   </div>
 
   <!-- (Opcional) Bootstrap JS -->
