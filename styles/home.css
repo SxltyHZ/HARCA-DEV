@@ -57,7 +57,7 @@ width: calc((100% - (2rem * 2)) / 3);
 height: 256px;
 align-items: flex-start;
 border-radius: 16px;
-background: var(--Red-100, #980000);
+background: var(--red-100, #980000);
 color: rgb(var(--cool-00));
 position: relative;
 }
