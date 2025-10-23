@@ -1,5 +1,3 @@
-<div id="harca-app">
-
   <header class="py-5">
     <div class="container">
       <h1 class="display-6 fw-bold text-brand-dark mb-2">Hola, este es mi hero</h1>
@@ -68,5 +66,3 @@
 
     <img src="/assets/svg/greater-houston-repeater/gth-pattern.svg" alt="" id="ght-bg-2" class="ght-bg">
   </section>
-
-</div>
