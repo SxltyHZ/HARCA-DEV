@@ -1,5 +1,3 @@
-@import url('./tokens.css');
-
 .harca-intro{
   /* altura “auto”; margen y relleno ya se controlan con utilidades Bootstrap */
   background: transparent;

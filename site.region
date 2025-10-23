@@ -5,66 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% block title %}{% endblock %}</title>
 
+  {squarespace-headers}
+
+  <!-- Recursos externos opcionales -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet" />
-
 </head>
-<body class="{{ body.classes }}">
+
+<body id="{squarespace.page-id}" class="{squarespace.page-classes}">
   <header>
-    <div class="container">
-      <h1 class="display-6 fw-bold text-brand-dark mb-2">Hola, este es mi hero</h1>
-      <p class="lead mb-4">Bootstrap + mis tokens, sin enredos.</p>
-      <a class="btn btn-primary btn-lg">Guardar</a>
-    </div>
+    {% region "header" %}{% endregion %}
   </header>
 
   <main id="main" role="main">
-    <div data-content-field="main-content">
-      <!-- SECTION: HARCA Intro -->
-      <section class="harca-intro position-relative overflow-hidden py-10">
-        <div class="harca-pattern"></div>
-
-        <div class="container position-relative">
-          <div class="harca-logo-badge mx-auto">
-            <img src="/assets/svg/harca-logo.svg" alt="HARCA" class="img-fluid">
-          </div>
-
-          <div class="harca-panel mx-auto p-4 p-sm-4 p-md-5 gap-4 d-flex flex-column">
-            <div>
-              <p class="mb-0 text-center text-brand-dark">
-                The <strong>Area Roofing Contractors Association (HARCA)</strong> is a regional chapter of RCAT...
-              </p>
-            </div>
-            <div>
-              <p class="mb-0 text-center text-brand-dark">
-                We support contractors with continuing education...
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION: We Serve Greater Houston Area -->
-      <section class="greater-houston-area col d-flex flex-column gap-4 pb-4 mt-5 mb-4 position-relative">
-        <img src="/assets/svg/greater-houston-repeater/gth-pattern.svg" alt="" id="ght-bg-1" class="ght-bg">
-
-        <div>
-          <h2 class="ty-heading-l text-center text-brand-dark">We Serve the Greater Houston Area Via:</h2>
-        </div>
-
-        <div class="gth-wrapper container-xl d-flex justify-content-center align-items-center align-content-center flex-wrap gap-4 mx-auto">
-          <!-- ...items... -->
-        </div>
-
-        <img src="/assets/svg/greater-houston-repeater/gth-pattern.svg" alt="" id="ght-bg-2" class="ght-bg">
-      </section>
-    </div>
+    <section data-content-field="main-content">
+      {squarespace.main-content}
+    </section>
   </main>
 
   <footer>
     {% region "footer" %}{% endregion %}
   </footer>
 
+  {squarespace-footers}
+
+  <!-- Scripts externos opcionales -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
