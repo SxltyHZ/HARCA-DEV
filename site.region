@@ -20,7 +20,15 @@
 </head>
 <body class="{{ body.classes }}">
   <header>
-    {% region "header" %}{% endregion %}
+      <div class="container">
+    <h1 class="display-6 fw-bold text-brand-dark mb-2">
+      Hola, este es mi hero
+    </h1>
+    <p class="lead mb-4">
+      Bootstrap + mis tokens, sin enredos.
+    </p>
+    <a class="btn btn-primary btn-lg">Guardar</a>
+  </div>
   </header>
 
   <main id="main" role="main">
