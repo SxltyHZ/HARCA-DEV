@@ -1,118 +1,128 @@
 html { outline: 12px solid lime !important; }
 body { background: #ffeb3b !important; }
 
-/* ==== TUS ESTILOS, VERSIÓN LESS-SAFE ==== */
-
+/* ===== HARCA Intro ===== */
 .harca-intro{
-  background: transparent;
+  background: transparent !important;
 }
 
 .harca-pattern{
-  position:absolute; inset:0;
-  background-image: url("/assets/svg/harca-pattern.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 90% auto;
-  opacity: 1;
-  pointer-events:none;
-  z-index:0;
+  position: absolute !important; inset: 0 !important;
+  background-image: url("/assets/svg/harca-pattern.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 90% auto !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
 }
 
 .harca-panel{
-  position:relative;
-  z-index:1;
-  max-width: 980px;
-  border-radius: 1.5rem;
+  position: relative !important;
+  z-index: 1 !important;
+  max-width: 980px !important;
+  border-radius: 1.5rem !important;
   background: linear-gradient(
     95deg,
     var(--Neutral-Cool-20, #EDF5F8) 0%,
     var(--Red-10, #FFE5E5) 49.04%,
     var(--Neutral-Warm-00, #FFFDFD) 78.37%,
     var(--Blue-20, #C8EDFD) 100%
-  );
+  ) !important;
 }
 
 .harca-logo-badge{
-  width: 180px; height: 180px;
-  border-radius: 16px;
-  background: rgb(var(--cool-20));
-  display:flex; align-items:center; justify-content:center;
-  transform: translateY(40%);
-  margin-bottom: 4rem;
-  box-shadow: 0 4px 20px 0 rgba(116, 167, 189, 0.10);
-  position: relative;
-  z-index: 2;
+  width: 180px !important; height: 180px !important;
+  border-radius: 16px !important;
+  background: rgb(var(--cool-20)) !important;
+  display: flex !important; align-items: center !important; justify-content: center !important;
+  transform: translateY(40%) !important;
+  margin-bottom: 4rem !important;
+  box-shadow: 0 4px 20px 0 rgba(116, 167, 189, 0.10) !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
-.harca-logo-badge img{ max-width: 68%; height:auto; }
+.harca-logo-badge img{ max-width: 68% !important; height: auto !important; }
 
 .harca-textbox{
-  background: #fff;
-  border: 1px solid rgb(0 0 0 / 0.08);
-  border-radius: 12px;
-  padding: 1rem 1.25rem;
-  color: #1d2939;
-  box-shadow: 0 2px 6px rgb(0 0 0 / .04);
+  background: #fff !important;
+  border: 1px solid rgb(0 0 0 / 0.08) !important;
+  border-radius: 12px !important;
+  padding: 1rem 1.25rem !important;
+  color: #1d2939 !important;
+  box-shadow: 0 2px 6px rgb(0 0 0 / .04) !important;
 }
 
-.gth-item {
-  display: flex;
-  /* ESCAPAR calc con división */
-  width: calc(~"(100% - (2rem * 2)) / 3");
-  height: 256px;
-  align-items: flex-start;
-  border-radius: 16px;
-  background: var(--Red-100, #980000);
-  color: rgb(var(--cool-00));
-  position: relative;
-}
-.gth-item img {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
+/* ===== Greater Houston repeater ===== */
 
-.ght-bg { max-width: 370px; }
+/* Si quieres fijar el gap a 2rem sin depender de Bootstrap: */
+.gth-wrapper{ gap: 2rem !important; }
 
-#ght-bg-1 {
-  position: absolute;
-  left: 0;
-  bottom: 10%;
-  z-index: -1;
+.gth-item{
+  display: flex !important;
+  /* Aproximación 3 columnas sin calc: */
+  flex: 0 1 31% !important;        /* base de ~31% */
+  max-width: 31% !important;
+  height: 256px !important;
+  align-items: flex-start !important;
+  border-radius: 16px !important;
+  background: var(--Red-100, #980000) !important;
+  color: rgb(var(--cool-00)) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
 
-#ght-bg-2 {
-  position: absolute;
-  right: 0;
-  bottom: 10%;
-  z-index: -1;
+.gth-item img{
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
 }
 
-/* Canary (quítalo después) */
-html { outline: 6px solid fuchsia !important; }
+.ght-bg{ max-width: 370px !important; }
 
+#ght-bg-1{
+  position: absolute !important;
+  left: 0 !important;
+  bottom: 10% !important;
+  z-index: -1 !important;
+}
+#ght-bg-2{
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 10% !important;
+  z-index: -1 !important;
+}
+
+/* Canary */
+html{ outline: 6px solid fuchsia !important; }
+
+/* ===== Breakpoints ===== */
 @media (max-width: 1024px){
   .harca-logo-badge{
-    width: 200px; height: 200px;
-    transform: translateY(50%);
-    margin-bottom: 5rem;
+    width: 200px !important; height: 200px !important;
+    transform: translateY(50%) !important;
+    margin-bottom: 5rem !important;
   }
-  .harca-panel{ padding: 3.5rem 4rem; }
+  .harca-panel{ padding: 3.5rem 4rem !important; }
 
+  /* 2 columnas sin calc */
   .gth-item{
-    /* También escapar el calc con resta */
-    width: calc(~"50% - 1rem");
+    flex: 0 1 48% !important;
+    max-width: 48% !important;
   }
 
-  #ght-bg-1, #ght-bg-2 { display: none; }
+  #ght-bg-1, #ght-bg-2{ display: none !important; }
 }
 
 @media (max-width: 576px){
-  .gth-item {
-    width: 100%;
-    height: 180px;
+  /* 1 columna */
+  .gth-item{
+    flex: 0 1 100% !important;
+    max-width: 100% !important;
+    height: 180px !important;
   }
-  .gth-item img {
-    max-width: 96px;
-    height: auto;
+  .gth-item img{
+    max-width: 96px !important;
+    height: auto !important;
   }
 }
