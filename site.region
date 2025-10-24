@@ -13,6 +13,7 @@
 
   <!-- Este marcador inserta automáticamente /site.css y scripts de Squarespace -->
   {squarespace-headers}
+  {% stylesheet 'styles/site.less' %}
 </head>
 
 
