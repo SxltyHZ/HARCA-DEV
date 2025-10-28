@@ -1,15 +1,13 @@
-/* ========= Layout utilities (vanilla CSS) ========= */
-:root {
-  --gutter: 1rem;
-  --container-max: 1064px;
-}
+/******** Layout Utilities (LESS-only) ********/
+/* Tokens */
+/* Breakpoints */
 /* Container */
 .container {
   width: 100%;
   max-width: 100%;
 }
 .container--static {
-  max-width: var(--container-max) !important;
+  max-width: 1064px !important;
 }
 .container--fluid {
   max-width: none !important;
@@ -159,60 +157,60 @@
   gap: 0;
 }
 .gap-1 {
-  gap: calc(var(--gutter)*0.5);
+  gap: 0.5rem;
 }
 .gap-2 {
-  gap: var(--gutter);
+  gap: 1rem;
 }
 .gap-3 {
-  gap: calc(var(--gutter)*1.5);
+  gap: 1.5rem;
 }
 .gap-4 {
-  gap: calc(var(--gutter)*2);
+  gap: 2rem;
 }
 .row-gap-0 {
   row-gap: 0;
 }
 .row-gap-1 {
-  row-gap: calc(var(--gutter)*0.5);
+  row-gap: 0.5rem;
 }
 .row-gap-2 {
-  row-gap: var(--gutter);
+  row-gap: 1rem;
 }
 .row-gap-3 {
-  row-gap: calc(var(--gutter)*1.5);
+  row-gap: 1.5rem;
 }
 .row-gap-4 {
-  row-gap: calc(var(--gutter)*2);
+  row-gap: 2rem;
 }
 .col-gap-0 {
   column-gap: 0;
 }
 .col-gap-1 {
-  column-gap: calc(var(--gutter)*0.5);
+  column-gap: 0.5rem;
 }
 .col-gap-2 {
-  column-gap: var(--gutter);
+  column-gap: 1rem;
 }
 .col-gap-3 {
-  column-gap: calc(var(--gutter)*1.5);
+  column-gap: 1.5rem;
 }
 .col-gap-4 {
-  column-gap: calc(var(--gutter)*2);
+  column-gap: 2rem;
 }
 /* Grid simple (.row / .col-*) */
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: calc(var(--gutter)/-2);
-  margin-right: calc(var(--gutter)/-2);
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
 }
 .col {
   position: relative;
   min-width: 0;
   width: 100%;
-  padding-left: calc(var(--gutter)/2);
-  padding-right: calc(var(--gutter)/2);
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .col-auto {
   flex: 0 0 auto;
@@ -416,8 +414,7 @@
 .box-content {
   box-sizing: content-box;
 }
-/* ========== Responsive variants ========== */
-/* NOTE: Si quieres “desactivar” responsive, comenta estos 3 bloques */
+/* ===== Responsive variants ===== */
 @media (min-width: 480px) {
   .sm-flex {
     display: flex;
@@ -483,28 +480,28 @@
     gap: 0;
   }
   .sm-gap-1 {
-    gap: calc(var(--gutter)*0.5);
+    gap: 0.5rem;
   }
   .sm-gap-2 {
-    gap: var(--gutter);
+    gap: 1rem;
   }
   .sm-gap-3 {
-    gap: calc(var(--gutter)*1.5);
+    gap: 1.5rem;
   }
   .sm-gap-4 {
-    gap: calc(var(--gutter)*2);
+    gap: 2rem;
   }
   .sm-row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(var(--gutter)/-2);
-    margin-right: calc(var(--gutter)/-2);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
   .sm-col {
     width: 100%;
     min-width: 0;
-    padding-left: calc(var(--gutter)/2);
-    padding-right: calc(var(--gutter)/2);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
   .sm-col-auto {
     flex: 0 0 auto;
@@ -699,28 +696,28 @@
     gap: 0;
   }
   .md-gap-1 {
-    gap: calc(var(--gutter)*0.5);
+    gap: 0.5rem;
   }
   .md-gap-2 {
-    gap: var(--gutter);
+    gap: 1rem;
   }
   .md-gap-3 {
-    gap: calc(var(--gutter)*1.5);
+    gap: 1.5rem;
   }
   .md-gap-4 {
-    gap: calc(var(--gutter)*2);
+    gap: 2rem;
   }
   .md-row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(var(--gutter)/-2);
-    margin-right: calc(var(--gutter)/-2);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
   .md-col {
     width: 100%;
     min-width: 0;
-    padding-left: calc(var(--gutter)/2);
-    padding-right: calc(var(--gutter)/2);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
   .md-col-auto {
     flex: 0 0 auto;
@@ -853,7 +850,7 @@
 @media (min-width: 1024px) {
   /* container max solo en desktop */
   .container {
-    max-width: var(--container-max);
+    max-width: 1064px;
   }
   .lg-flex {
     display: flex;
@@ -919,28 +916,28 @@
     gap: 0;
   }
   .lg-gap-1 {
-    gap: calc(var(--gutter)*0.5);
+    gap: 0.5rem;
   }
   .lg-gap-2 {
-    gap: var(--gutter);
+    gap: 1rem;
   }
   .lg-gap-3 {
-    gap: calc(var(--gutter)*1.5);
+    gap: 1.5rem;
   }
   .lg-gap-4 {
-    gap: calc(var(--gutter)*2);
+    gap: 2rem;
   }
   .lg-row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: calc(var(--gutter)/-2);
-    margin-right: calc(var(--gutter)/-2);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
   .lg-col {
     width: 100%;
     min-width: 0;
-    padding-left: calc(var(--gutter)/2);
-    padding-right: calc(var(--gutter)/2);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
   .lg-col-auto {
     flex: 0 0 auto;
@@ -1113,7 +1110,7 @@
 .left-0 {
   left: 0;
 }
-/* Responsive */
+/* Responsive positions */
 @media (min-width: 480px) {
   .sm-relative {
     position: relative;
