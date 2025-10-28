@@ -1,5 +1,5 @@
 <!-- HARCA Intro Section-->
-<section class="harca-intro">
+<section class="harca-intro container">
 
   <div class="harca-pattern"></div>
 
@@ -44,23 +44,23 @@
 
   <div class="gth-wrapper">
     <div class="gth-item">
-      <h3 class="ty-heading-m"> Advocacy and Local Industry Representation </h3>
+      <h3 class="heading-m"> Advocacy and Local Industry Representation </h3>
       <img src="./assets/svg/greater-houston-repeater/piramid.svg" alt="" class="gth-item__img" loading="lazy">
     </div>
     <div class="gth-item">
-      <h3 class="ty-heading-m"> Government Relations </h3>
+      <h3 class="heading-m"> Government Relations </h3>
       <img src="./assets/svg/greater-houston-repeater/goverment.svg" alt="" class="gth-item__img" loading="lazy">
     </div>
     <div class="gth-item">
-      <h3 class="ty-heading-m"> Education and Professional Development </h3>
+      <h3 class="heading-m"> Education and Professional Development </h3>
       <img src="./assets/svg/greater-houston-repeater/book.svg" alt="" class="gth-item__img" loading="lazy">
     </div>
     <div class="gth-item">
-      <h3 class="ty-heading-m"> Networking and Events </h3>
+      <h3 class="heading-m"> Networking and Events </h3>
       <img src="./assets/svg/greater-houston-repeater/networking.svg" alt="" class="gth-item__img" loading="lazy">
     </div>
     <div class="gth-item">
-      <h3 class="ty-heading-m"> Consumer Awareness Resources </h3>
+      <h3 class="heading-m"> Consumer Awareness Resources </h3>
       <img src="./assets/svg/greater-houston-repeater/resources.svg" alt="" class="gth-item__img" loading="lazy">
     </div>
   </div>
