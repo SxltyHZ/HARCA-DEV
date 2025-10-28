@@ -1,94 +1,67 @@
-:root{
-  --ty-vw-min: 375;
-  --ty-vw-max: 1440;
-  --vw-range: calc(var(--ty-vw-max) - var(--ty-vw-min));
-  --vw-pos: calc((100vw - (var(--ty-vw-min) * 1px)) / var(--vw-range));
+/***** Typo LESS (sin :root, solo @vars) *****/
 
-  --font-sans: "Source Sans Pro",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --bs-body-font-family: var(--font-sans);
+/* Viewport para interpolación */
+@vw-min: 375;     /* px  */
+@vw-max: 1440;    /* px  */
+@vw-range: (@vw-max - @vw-min);
 
-  --fs-display-min: 44;
-  --fs-display-max: 64;
-  --lh-display: 1.15;
+/* Familia base */
+@font-sans: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-  --fs-hl-min: 28;
-  --fs-hl-max: 40;
-  --lh-hl: 1.2;
+/* Escalas (números en px y line-heights unitless) */
+@fs-display-min: 44;  @fs-display-max: 64;  @lh-display: 1.15;
+@fs-hl-min: 28;       @fs-hl-max: 40;       @lh-hl: 1.2;
+@fs-hm-min: 24;       @fs-hm-max: 28;       @lh-hm: 1.3;
+@fs-hs-min: 20;       @fs-hs-max: 20;       @lh-hs: 1.4;
 
-  --fs-hm-min: 24;
-  --fs-hm-max: 28;
-  --lh-hm: 1.3;
+@fs-bl: 18;           @lh-bl: 1.5556;
+@fs-bm: 16;           @lh-bm: 1.5;
+@fs-bs: 12;           @lh-bs: 1.3333;
+@fs-label: 10;        @lh-label: 1.4;
 
-  --fs-hs-min: 20;
-  --fs-hs-max: 20;
-  --lh-hs: 1.4;
-
-  --fs-bl: 18;
-  --lh-bl: 1.5556;
-
-  --fs-bm: 16;
-  --lh-bm: 1.5;
-
-  --fs-bs: 12;
-  --lh-bs: 1.3333;
-
-  --fs-label: 10;
-  --lh-label: 1.4;
-}
-
-.ty-display,
-.ty-heading-l,
-.ty-heading-m,
-.ty-heading-s,
-.ty-body-l,
-.ty-body-m,
-.ty-body-s,
-.ty-label,
-.ty-caption{
-  font-family: var(--font-sans);
+/* Util: bloque base común */
+.ty-base() {
+  font-family: @font-sans;
   font-weight: 700;
   letter-spacing: 0;
 }
 
-.ty-display{
-  font-size: clamp(calc(var(--fs-display-min)*1px),
-                   calc((var(--fs-display-min)*1px) + (var(--fs-display-max) - var(--fs-display-min)) * var(--vw-pos)),
-                   calc(var(--fs-display-max)*1px));
-  line-height: var(--lh-display);
+/* Fórmula fluid: clamp(min, min + (max-min)*((100vw - vwmin)/(vwmax-vwmin)), max) */
+/* Usamos strings escapados ~"..." para evitar que LESS intente evaluar los calc/divisiones */
+
+.ty-display {
+  .ty-base();
+  font-size: ~"clamp(@{fs-display-min}px, calc(@{fs-display-min}px + (@{fs-display-max} - @{fs-display-min}) * ((100vw - @{vw-min}px) / @{vw-range})), @{fs-display-max}px)";
+  line-height: @lh-display;
 }
 
-.ty-heading-l{
-  font-size: clamp(calc(var(--fs-hl-min)*1px),
-                   calc((var(--fs-hl-min)*1px) + (var(--fs-hl-max) - var(--fs-hl-min)) * var(--vw-pos)),
-                   calc(var(--fs-hl-max)*1px));
-  line-height: var(--lh-hl);
+.ty-heading-l {
+  .ty-base();
+  font-size: ~"clamp(@{fs-hl-min}px, calc(@{fs-hl-min}px + (@{fs-hl-max} - @{fs-hl-min}) * ((100vw - @{vw-min}px) / @{vw-range})), @{fs-hl-max}px)";
+  line-height: @lh-hl;
 }
 
-.ty-heading-m{
-  font-size: clamp(calc(var(--fs-hm-min)*1px),
-                   calc((var(--fs-hm-min)*1px) + (var(--fs-hm-max) - var(--fs-hm-min)) * var(--vw-pos)),
-                   calc(var(--fs-hm-max)*1px));
-  line-height: var(--lh-hm);
+.ty-heading-m {
+  .ty-base();
+  font-size: ~"clamp(@{fs-hm-min}px, calc(@{fs-hm-min}px + (@{fs-hm-max} - @{fs-hm-min}) * ((100vw - @{vw-min}px) / @{vw-range})), @{fs-hm-max}px)";
+  line-height: @lh-hm;
 }
 
-.ty-heading-s{
-  font-size: calc(var(--fs-hs-min)*1px);
-  line-height: var(--lh-hs);
+.ty-heading-s {
+  .ty-base();
+  font-size: ~"calc(@{fs-hs-min}px)"; /* fijo */
+  line-height: @lh-hs;
 }
 
-.ty-body-l{ font-size: calc(var(--fs-bl)*1px); line-height: var(--lh-bl); }
-.ty-body-m{ font-size: calc(var(--fs-bm)*1px); line-height: var(--lh-bm); }
-.ty-body-s{ font-size: calc(var(--fs-bs)*1px); line-height: var(--lh-bs); }
+.ty-body-l { .ty-base(); font-size: ~"calc(@{fs-bl}px)";   line-height: @lh-bl; }
+.ty-body-m { .ty-base(); font-size: ~"calc(@{fs-bm}px)";   line-height: @lh-bm; }
+.ty-body-s { .ty-base(); font-size: ~"calc(@{fs-bs}px)";   line-height: @lh-bs; }
 .ty-label,
-.ty-caption{ font-size: calc(var(--fs-label)*1px); line-height: var(--lh-label); }
+.ty-caption { .ty-base(); font-size: ~"calc(@{fs-label}px)"; line-height: @lh-label; }
 
-/* alias directo, sin composes/extend */
-.display-text{
-  font-family: var(--font-sans);
-  font-weight: 700;
-  letter-spacing: 0;
-  font-size: clamp(calc(var(--fs-display-min)*1px),
-                   calc((var(--fs-display-min)*1px) + (var(--fs-display-max) - var(--fs-display-min)) * var(--vw-pos)),
-                   calc(var(--fs-display-max)*1px));
-  line-height: var(--lh-display);
+/* Alias directo de display (sin :root, sin extends avanzados) */
+.display-text {
+  .ty-base();
+  font-size: ~"clamp(@{fs-display-min}px, calc(@{fs-display-min}px + (@{fs-display-max} - @{fs-display-min}) * ((100vw - @{vw-min}px) / @{vw-range})), @{fs-display-max}px)";
+  line-height: @lh-display;
 }
