@@ -1,0 +1,337 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+figure,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  color: #044866;
+}
+p,
+span,
+a,
+li,
+small,
+strong,
+em,
+label,
+input,
+textarea,
+button {
+  font: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.text-display {
+  font-size: 44px;
+  line-height: 118.18%;
+  font-weight: 700;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .text-display {
+    font-size: 56px;
+    line-height: 114.29%;
+  }
+}
+@media (min-width: 1200px) {
+  .text-display {
+    font-size: 64px;
+    line-height: 112.5%;
+  }
+}
+.heading-l {
+  font-size: 28px;
+  line-height: 128.57%;
+  font-weight: 700;
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .heading-l {
+    font-size: 32px;
+    line-height: 125%;
+  }
+}
+@media (min-width: 1200px) {
+  .heading-l {
+    font-size: 40px;
+    line-height: 120%;
+  }
+}
+.heading-m {
+  font-size: 24px;
+  line-height: 133.33%;
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .heading-m {
+    font-size: 24px;
+    line-height: 133.33%;
+  }
+}
+@media (min-width: 1200px) {
+  .heading-m {
+    font-size: 28px;
+    line-height: 128.57%;
+  }
+}
+.heading-s {
+  font-size: 20px;
+  line-height: 140%;
+  font-weight: 700;
+}
+.body-l {
+  font-size: 18px;
+  line-height: 155.56%;
+  font-weight: 700;
+}
+.body-m {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 700;
+}
+.label {
+  font-size: 12px;
+  line-height: 133.33%;
+  font-weight: 700;
+}
+.caption {
+  font-size: 10px;
+  line-height: 140%;
+  font-weight: 700;
+}
+@media (min-width: 1200px) {
+  .desktop-text-left {
+    text-align: left;
+  }
+}
+@media (min-width: 1200px) {
+  .desktop-text-center {
+    text-align: center;
+  }
+}
+@media (min-width: 1200px) {
+  .desktop-text-right {
+    text-align: right;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .tablet-text-left {
+    text-align: left;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .tablet-text-center {
+    text-align: center;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .tablet-text-right {
+    text-align: right;
+  }
+}
+@media (max-width: 767px) {
+  .mobile-text-left {
+    text-align: left;
+  }
+}
+@media (max-width: 767px) {
+  .mobile-text-center {
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .mobile-text-right {
+    text-align: right;
+  }
+}
+@media (min-width: 1200px) {
+  .text-max-50 {
+    max-width: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .text-max-50 {
+    max-width: 65%;
+  }
+}
+@media (max-width: 767px) {
+  .text-max-50 {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .text-max-60 {
+    max-width: 60%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .text-max-60 {
+    max-width: 75%;
+  }
+}
+@media (max-width: 767px) {
+  .text-max-60 {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .text-max-70 {
+    max-width: 70%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .text-max-70 {
+    max-width: 85%;
+  }
+}
+@media (max-width: 767px) {
+  .text-max-70 {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .text-max-80 {
+    max-width: 80%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .text-max-80 {
+    max-width: 95%;
+  }
+}
+@media (max-width: 767px) {
+  .text-max-80 {
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .text-max-90 {
+    max-width: 90%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .text-max-90 {
+    max-width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .text-max-90 {
+    max-width: 100%;
+  }
+}
+.text-max-100 {
+  max-width: 100%;
+}
+.text-red-10 {
+  color: #FFE5E5;
+}
+.text-red-20 {
+  color: #FFCCCC;
+}
+.text-red-30 {
+  color: #FFB3B3;
+}
+.text-red-40 {
+  color: #FF9999;
+}
+.text-red-50 {
+  color: #FF8080;
+}
+.text-red-60 {
+  color: #FF4D4D;
+}
+.text-red-70 {
+  color: #FF1A1A;
+}
+.text-red-80 {
+  color: #E60000;
+}
+.text-red-90 {
+  color: #B30000;
+}
+.text-red-100 {
+  color: #980000;
+}
+.text-red-110 {
+  color: #620000;
+}
+.text-red-120 {
+  color: #370000;
+}
+.text-blue-10 {
+  color: #E3F6FE;
+}
+.text-blue-20 {
+  color: #C8EDFD;
+}
+.text-blue-30 {
+  color: #ACE4FC;
+}
+.text-blue-40 {
+  color: #90DBFA;
+}
+.text-blue-50 {
+  color: #75D2F9;
+}
+.text-blue-60 {
+  color: #3EBFF7;
+}
+.text-blue-70 {
+  color: #22B6F6;
+}
+.text-blue-80 {
+  color: #0998D5;
+}
+.text-blue-90 {
+  color: #07719E;
+}
+.text-blue-100 {
+  color: #044866;
+}
+.text-blue-110 {
+  color: #022A3B;
+}
+.text-blue-120 {
+  color: #021A25;
+}
+.text-warm-00 {
+  color: #FFFDFD;
+}
+.text-warm-10 {
+  color: #FFF8F8;
+}
+.text-warm-20 {
+  color: #FCEEEE;
+}
+.text-warm-30 {
+  color: #F6DEDE;
+}
+.text-cool-00 {
+  color: #FEFEFE;
+}
+.text-cool-10 {
+  color: #F9FCFD;
+}
+.text-cool-20 {
+  color: #EDF5F8;
+}
+.text-cool-30 {
+  color: #DDE9F0;
+}
