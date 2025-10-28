@@ -1,259 +1,61 @@
-// Reds
+/* ===== Botones (super simplificado / vanilla) ===== */
+
+/* Colores mínimos (ajusta si ya tienes tokens) */
 @red-10:  #FFE5E5;
-@red-20:  #FFCCCC;
-@red-30:  #FFB3B3;
-@red-40:  #FF9999;
-@red-50:  #FF8080;
-@red-60:  #FF4D4D;
-@red-70:  #FF1A1A;
 @red-80:  #E60000;
-@red-90:  #B30000;
 @red-100: #980000;
-@red-110: #620000;
-@red-120: #370000;
 
-// Blues
-@blue-10:  #E3F6FE;
-@blue-20:  #C8EDFD;
-@blue-30:  #ACE4FC;
-@blue-40:  #90DBFA;
-@blue-50:  #75D2F9;
-@blue-60:  #3EBFF7;
-@blue-70:  #22B6F6;
-@blue-80:  #0998D5;
-@blue-90:  #07719E;
-@blue-100: #044866;
-@blue-110: #022A3B;
-@blue-120: #021A25;
+@blue-50: #75D2F9;
+@blue-80: #0998D5;
 
-// Warm (Neutral-Warm)
-@warm-00: #FFFDFD;
-@warm-10: #FFF8F8;
-@warm-20: #FCEEEE;
-@warm-30: #F6DEDE;
-
-// Cool (Neutral-Cool)
 @cool-00: #FEFEFE;
-@cool-10: #F9FCFD;
-@cool-20: #EDF5F8;
 @cool-30: #DDE9F0;
 
-
-@btn-radius: .75rem;
-@btn-pad-y: 1rem;
-@btn-pad-x: 2rem;
-@btn-gap: .5rem;           
-@btn-font: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-@btn-size: 1.125rem;       
-@btn-lh: 1.5;              
-
-
-/* Vars de botones */
-@btn-radius: .75rem;
-@btn-pad-y: 1rem;
-@btn-pad-x: 2rem;
-@btn-gap: .5rem;
-@btn-font: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-@btn-size: 1.125rem;
-@btn-lh: 1.5;
-
-/* Focus rings sin funciones LESS (usamos rgba) */
-@focus-ring-base:      0 0 0 3px rgba(0,0,0,0.25), 0 0 0 5px rgba(117,210,249,0.75);
-@focus-ring-primary:   0 0 0 3px rgba(0,0,0,0.25), 0 0 0 5px rgba(255,128,128,0.75);
-@focus-ring-secondary: 0 0 0 3px rgba(0,0,0,0.25), 0 0 0 5px rgba(255,128,128,0.75);
-@focus-ring-tertiary:  0 0 0 3px rgba(0,0,0,0.25), 0 0 0 5px rgba(117,210,249,0.75);
-
 /* Base */
-a.btn,
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: @btn-gap;
-  padding: @btn-pad-y @btn-pad-x;
-  border-radius: @btn-radius;
-  text-decoration: none;
-  font-family: @btn-font;
-  font-size: @btn-size;
-  line-height: @btn-lh;
-  font-weight: 700;
-  cursor: pointer;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  padding: .875rem 1.25rem;
   border: 1px solid transparent;
-  transition: background-color .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .06s ease;
-
-  &:focus { outline: none; } /* fallback */
-  &:focus-visible { outline: none; box-shadow: @focus-ring-base; }
-
-  &[aria-disabled="true"],
-  &.btn-off,
-  &:disabled {
-    pointer-events: none;
-    opacity: .85;
-    filter: ~"saturate(.85)";
-    cursor: not-allowed;
-  }
+  border-radius: .5rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-/* Motion prefs */
-@media (prefers-reduced-motion: reduce) {
-  a.btn, .btn { transition: none; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .btn:active { transform: translateY(1px); }
-}
+/* Hover genérico (opcional) */
+.btn:hover { opacity: .9; }
 
 /* Variantes */
 .btn-primary {
   background: @red-100;
   color: @cool-00;
-
-  &:hover { background: @red-80; }
-  &:focus-visible { box-shadow: @focus-ring-primary; }
-
-  &.btn-off,
-  &[aria-disabled="true"],
-  &:disabled {
-    background: @cool-30;
-    color: @cool-00;
-    border-color: transparent;
-  }
 }
+.btn-primary:hover { background: @red-80; }
 
 .btn-secondary {
   background: @cool-00;
   color: @red-100;
   border-color: @red-100;
-
-  &:hover { background: @red-10; border-color: @red-100; }
-  &:focus-visible { box-shadow: @focus-ring-secondary; }
-
-  &.btn-off,
-  &[aria-disabled="true"],
-  &:disabled {
-    background: @cool-00;
-    border-color: @cool-30;
-    color: @cool-30;
-  }
 }
+.btn-secondary:hover { background: @red-10; }
 
 .btn-tertiary {
   background: @blue-80;
   color: @cool-00;
-
-  &:hover { background: @blue-50; color: @cool-00; }
-  &:focus-visible { box-shadow: @focus-ring-tertiary; }
-
-  &.btn-off,
-  &[aria-disabled="true"],
-  &:disabled {
-    background: @cool-30;
-    color: @cool-00;
-  }
 }
-
-/* Iconos dentro del botón */
-.btn > svg,
-.btn > i {
-  width: 1.25rem;
-  height: 1.25rem;
-  flex: 0 0 auto;
-  display: inline-block;
-}
-
-/* Variante sólo icono */
-.btn--icon {
-  padding: .75rem;
-  /* Si prefieres evitar aspect-ratio por compat, comenta la línea siguiente */
-  aspect-ratio: 1 / 1;
-}
+.btn-tertiary:hover { background: @blue-50; }
 
 /* Tamaños */
-.btn--sm { font-size: 1rem;    padding: .75rem 1rem; }
-.btn--lg { font-size: 1.25rem; padding: 1.125rem 2.25rem; }
+.btn--sm { padding: .625rem .875rem; font-size: .9375rem; }
+.btn--lg { padding: 1.125rem 1.75rem; font-size: 1.125rem; }
 
-/* Disposición */
-.btn-block { display: block; width: max-content; }
+/* Bloque/fluido */
+.btn--block { display: block; width: 100%; }
 
-.btn-align-left   { display: block; margin-left: 0;    margin-right: auto; }
-.btn-align-center { display: block; margin-left: auto; margin-right: auto; }
-.btn-align-right  { display: block; margin-left: auto; margin-right: 0; }
-
-.self-start   { align-self: flex-start; }
-.self-center  { align-self: center; }
-.self-end     { align-self: flex-end; }
-.self-stretch { align-self: stretch; }
-
-.btn-fluid { display: block; width: 100%; }
-
-/* Tablet */
-@media (max-width: 1023.98px) {
-  .tb-btn-align-left   { display: block; margin-left: 0;    margin-right: auto; }
-  .tb-btn-align-center { display: block; margin-left: auto; margin-right: auto; }
-  .tb-btn-align-right  { display: block; margin-left: auto; margin-right: 0; }
-
-  .tb-self-start   { align-self: flex-start; }
-  .tb-self-center  { align-self: center; }
-  .tb-self-end     { align-self: flex-end; }
-  .tb-self-stretch { align-self: stretch; }
-
-  .tb-btn-fluid { display: block; width: 100%; }
-}
-
-/* Mobile */
-@media (max-width: 767.98px) {
-  .mb-btn-align-left   { display: block; margin-left: 0;    margin-right: auto; }
-  .mb-btn-align-center { display: block; margin-left: auto; margin-right: auto; }
-  .mb-btn-align-right  { display: block; margin-left: auto; margin-right: 0; }
-
-  .mb-self-start   { align-self: flex-start; }
-  .mb-self-center  { align-self: center; }
-  .mb-self-end     { align-self: flex-end; }
-  .mb-self-stretch { align-self: stretch; }
-
-  .mb-btn-fluid { display: block; width: 100%; }
-}
-
-/* Estados OFF directos (por si se usan como clases sueltas) */
-.btn-primary-off {
-  background: @cool-30;
-  color: @cool-00;
-  border-color: transparent;
+/* Desactivado por clase (sin aria) */
+.btn--disabled {
   pointer-events: none;
-  opacity: .85;
-  filter: ~"saturate(.85)";
-  cursor: not-allowed;
-}
-.btn-secondary-off {
-  background: @cool-00;
-  border-color: @cool-30;
-  color: @cool-30;
-  pointer-events: none;
-  opacity: .85;
-  filter: ~"saturate(.85)";
-  cursor: not-allowed;
-}
-.btn-tertiary-off {
-  background: @cool-30;
-  color: @cool-00;
-  pointer-events: none;
-  opacity: .85;
-  filter: ~"saturate(.85)";
-  cursor: not-allowed;
-}
-
-/* Helpers para simular estados en doc/demo */
-.is-hover {
-  .btn-primary   { background: @red-80; }
-  .btn-secondary { background: @red-10; }
-  .btn-tertiary  { background: @blue-50; color: @cool-00; }
-}
-.is-disabled {
-  .btn {
-    pointer-events: none;
-    cursor: not-allowed;
-    opacity: .85;
-    filter: ~"saturate(.85)";
-  }
+  cursor: default;
+  opacity: .6;
 }

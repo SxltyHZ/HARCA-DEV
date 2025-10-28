@@ -1,57 +1,19 @@
-/* Vars de botones */
-/* Focus rings sin funciones LESS (usamos rgba) */
+/* ===== Botones (super simplificado / vanilla) ===== */
+/* Colores mínimos (ajusta si ya tienes tokens) */
 /* Base */
-a.btn,
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  border-radius: 0.75rem;
-  text-decoration: none;
-  font-family: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.5;
-  font-weight: 700;
-  cursor: pointer;
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  padding: 0.875rem 1.25rem;
   border: 1px solid transparent;
-  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, transform 0.06s ease;
-  /* fallback */
+  border-radius: 0.5rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
 }
-a.btn:focus,
-.btn:focus {
-  outline: none;
-}
-a.btn:focus-visible,
-.btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25), 0 0 0 5px rgba(117, 210, 249, 0.75);
-}
-a.btn[aria-disabled="true"],
-.btn[aria-disabled="true"],
-a.btn.btn-off,
-.btn.btn-off,
-a.btn:disabled,
-.btn:disabled {
-  pointer-events: none;
-  opacity: 0.85;
-  filter: saturate(.85);
-  cursor: not-allowed;
-}
-/* Motion prefs */
-@media (prefers-reduced-motion: reduce) {
-  a.btn,
-  .btn {
-    transition: none;
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .btn:active {
-    transform: translateY(1px);
-  }
+/* Hover genérico (opcional) */
+.btn:hover {
+  opacity: 0.9;
 }
 /* Variantes */
 .btn-primary {
@@ -61,16 +23,6 @@ a.btn:disabled,
 .btn-primary:hover {
   background: #E60000;
 }
-.btn-primary:focus-visible {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25), 0 0 0 5px rgba(255, 128, 128, 0.75);
-}
-.btn-primary.btn-off,
-.btn-primary[aria-disabled="true"],
-.btn-primary:disabled {
-  background: #DDE9F0;
-  color: #FEFEFE;
-  border-color: transparent;
-}
 .btn-secondary {
   background: #FEFEFE;
   color: #980000;
@@ -78,17 +30,6 @@ a.btn:disabled,
 }
 .btn-secondary:hover {
   background: #FFE5E5;
-  border-color: #980000;
-}
-.btn-secondary:focus-visible {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25), 0 0 0 5px rgba(255, 128, 128, 0.75);
-}
-.btn-secondary.btn-off,
-.btn-secondary[aria-disabled="true"],
-.btn-secondary:disabled {
-  background: #FEFEFE;
-  border-color: #DDE9F0;
-  color: #DDE9F0;
 }
 .btn-tertiary {
   background: #0998D5;
@@ -96,185 +37,24 @@ a.btn:disabled,
 }
 .btn-tertiary:hover {
   background: #75D2F9;
-  color: #FEFEFE;
-}
-.btn-tertiary:focus-visible {
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.25), 0 0 0 5px rgba(117, 210, 249, 0.75);
-}
-.btn-tertiary.btn-off,
-.btn-tertiary[aria-disabled="true"],
-.btn-tertiary:disabled {
-  background: #DDE9F0;
-  color: #FEFEFE;
-}
-/* Iconos dentro del botón */
-.btn > svg,
-.btn > i {
-  width: 1.25rem;
-  height: 1.25rem;
-  flex: 0 0 auto;
-  display: inline-block;
-}
-/* Variante sólo icono */
-.btn--icon {
-  padding: 0.75rem;
-  /* Si prefieres evitar aspect-ratio por compat, comenta la línea siguiente */
-  aspect-ratio: 1;
 }
 /* Tamaños */
 .btn--sm {
-  font-size: 1rem;
-  padding: 0.75rem 1rem;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.9375rem;
 }
 .btn--lg {
-  font-size: 1.25rem;
-  padding: 1.125rem 2.25rem;
+  padding: 1.125rem 1.75rem;
+  font-size: 1.125rem;
 }
-/* Disposición */
-.btn-block {
-  display: block;
-  width: max-content;
-}
-.btn-align-left {
-  display: block;
-  margin-left: 0;
-  margin-right: auto;
-}
-.btn-align-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.btn-align-right {
-  display: block;
-  margin-left: auto;
-  margin-right: 0;
-}
-.self-start {
-  align-self: flex-start;
-}
-.self-center {
-  align-self: center;
-}
-.self-end {
-  align-self: flex-end;
-}
-.self-stretch {
-  align-self: stretch;
-}
-.btn-fluid {
+/* Bloque/fluido */
+.btn--block {
   display: block;
   width: 100%;
 }
-/* Tablet */
-@media (max-width: 1023.98px) {
-  .tb-btn-align-left {
-    display: block;
-    margin-left: 0;
-    margin-right: auto;
-  }
-  .tb-btn-align-center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .tb-btn-align-right {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-  }
-  .tb-self-start {
-    align-self: flex-start;
-  }
-  .tb-self-center {
-    align-self: center;
-  }
-  .tb-self-end {
-    align-self: flex-end;
-  }
-  .tb-self-stretch {
-    align-self: stretch;
-  }
-  .tb-btn-fluid {
-    display: block;
-    width: 100%;
-  }
-}
-/* Mobile */
-@media (max-width: 767.98px) {
-  .mb-btn-align-left {
-    display: block;
-    margin-left: 0;
-    margin-right: auto;
-  }
-  .mb-btn-align-center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .mb-btn-align-right {
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-  }
-  .mb-self-start {
-    align-self: flex-start;
-  }
-  .mb-self-center {
-    align-self: center;
-  }
-  .mb-self-end {
-    align-self: flex-end;
-  }
-  .mb-self-stretch {
-    align-self: stretch;
-  }
-  .mb-btn-fluid {
-    display: block;
-    width: 100%;
-  }
-}
-/* Estados OFF directos (por si se usan como clases sueltas) */
-.btn-primary-off {
-  background: #DDE9F0;
-  color: #FEFEFE;
-  border-color: transparent;
+/* Desactivado por clase (sin aria) */
+.btn--disabled {
   pointer-events: none;
-  opacity: 0.85;
-  filter: saturate(.85);
-  cursor: not-allowed;
-}
-.btn-secondary-off {
-  background: #FEFEFE;
-  border-color: #DDE9F0;
-  color: #DDE9F0;
-  pointer-events: none;
-  opacity: 0.85;
-  filter: saturate(.85);
-  cursor: not-allowed;
-}
-.btn-tertiary-off {
-  background: #DDE9F0;
-  color: #FEFEFE;
-  pointer-events: none;
-  opacity: 0.85;
-  filter: saturate(.85);
-  cursor: not-allowed;
-}
-/* Helpers para simular estados en doc/demo */
-.is-hover .btn-primary {
-  background: #E60000;
-}
-.is-hover .btn-secondary {
-  background: #FFE5E5;
-}
-.is-hover .btn-tertiary {
-  background: #75D2F9;
-  color: #FEFEFE;
-}
-.is-disabled .btn {
-  pointer-events: none;
-  cursor: not-allowed;
-  opacity: 0.85;
-  filter: saturate(.85);
+  cursor: default;
+  opacity: 0.6;
 }
