@@ -1,0 +1,36 @@
+/* ===== Botones (CSS plano) ===== */
+.btn {
+  display: inline-block;
+  padding: .875rem 1.25rem;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover { opacity: .9; }
+
+.btn-primary {
+  background: #980000; /* red-100 */
+  color: #FEFEFE;      /* cool-00 */
+}
+.btn-primary:hover { background: #E60000; /* red-80 */ }
+
+.btn-secondary {
+  background: #FEFEFE; /* cool-00 */
+  color: #980000;      /* red-100 */
+  border-color: #980000;
+}
+.btn-secondary:hover { background: #FFE5E5; /* red-10 */ }
+
+.btn-tertiary {
+  background: #0998D5; /* blue-80 */
+  color: #FEFEFE;      /* cool-00 */
+}
+.btn-tertiary:hover { background: #75D2F9; /* blue-50 */ }
+
+.btn--sm { padding: .625rem .875rem; font-size: .9375rem; }
+.btn--lg { padding: 1.125rem 1.75rem; font-size: 1.125rem; }
+.btn--block { display: block; width: 100%; }
+.btn--disabled { pointer-events: none; cursor: default; opacity: .6; }
